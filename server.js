@@ -5,18 +5,32 @@ const { cats, dogs, pets } = require('./src/store');
 const app = express();
 const catRouter = express.Router();
 const dogRouter = express.Router();
+const petRouter = express.Router();
 app.use(cors());
 app.use(catRouter);
 app.use(dogRouter);
+app.use(petRouter);
 
 // cat endpoints
 catRouter.get('/cat', (req, res, next) => {
   res.json(cats.first.value);
 });
+// catRouter
+//   .delete((req, res, next) => {
+//     const cat = cats.first.value;
+//     cats.dequeue();
+//     cats.enqueue(cat);
+//   });
 
 // dog endpoints
-dogRouter.get('/dog', (req, res, next) => {
-  res.json(dogs.first.value);
+dogRouter()
+  .get('/dog', (req, res, next) => {
+    res.json(dogs.first.value);
+  });
+
+// pets endpoints
+petRouter.get('/pet', (req, res, next) => {
+  res.json(pets.first.value);
 });
 
 
