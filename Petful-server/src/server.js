@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const { cats, dogs, pets } = require('./store');
 
 const app = express();
 app.use(cors());
