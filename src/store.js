@@ -3,6 +3,7 @@ const Queue = require('./Classes/Queue');
 const cats = new Queue();
 const dogs = new Queue();
 const pets = new Queue();
+const lineToAdopt = new Queue();
 
 const catsArray = [
   {
@@ -96,5 +97,6 @@ fillQueues();
 module.exports = {
   cats,
   dogs,
-  pets
+  pets,
+  lineToAdopt
 };

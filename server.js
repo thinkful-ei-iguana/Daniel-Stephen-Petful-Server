@@ -1,15 +1,19 @@
 const express = require('express');
 const cors = require('cors');
-const { cats, dogs, pets } = require('./src/store');
+const { cats, dogs, pets, lineToAdopt } = require('./src/store');
 
 const app = express();
 const catRouter = express.Router();
 const dogRouter = express.Router();
 const petRouter = express.Router();
+const lineRouter = express.Router();
+const jsonParser = express.json();
+
 app.use(cors());
 app.use('/cat', catRouter);
 app.use('/dog', dogRouter);
 app.use('/pet', petRouter);
+app.use('/line', lineRouter);
 
 // cat endpoints
 catRouter
@@ -47,6 +51,21 @@ petRouter
     const pet = pets.first.value;
     pets.dequeue();
     pets.enqueue(pet);
+    res.end();
+  });
+
+// line endpoints
+lineRouter
+  .route('/')
+  .get((req, res, next) => {
+    res.json(lineToAdopt.first.value);
+  })
+  .delete((req, res, next) => {
+    lineToAdopt.dequeue();
+    res.end();
+  })
+  .post(jsonParser, (req, res, next) => {
+    lineToAdopt.enqueue(req.body);
     res.end();
   });
 
