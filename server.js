@@ -61,7 +61,7 @@ lineRouter
     const arr = [];
     let node = lineToAdopt.first;
     while (node) {
-      arr.push(node);
+      arr.push(node.value);
       node = node.next;
     }
     res.json(arr);
