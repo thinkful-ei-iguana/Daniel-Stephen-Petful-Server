@@ -58,7 +58,7 @@ petRouter
 lineRouter
   .route('/')
   .get((req, res, next) => {
-    res.json(lineToAdopt.first.value);
+    res.json(lineToAdopt.first);
   })
   .delete((req, res, next) => {
     lineToAdopt.dequeue();
