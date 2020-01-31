@@ -7,32 +7,48 @@ const catRouter = express.Router();
 const dogRouter = express.Router();
 const petRouter = express.Router();
 app.use(cors());
-app.use(catRouter);
-app.use(dogRouter);
-app.use(petRouter);
+app.use('/cat', catRouter);
+app.use('/dog', dogRouter);
+app.use('/pet', petRouter);
 
 // cat endpoints
-catRouter.get('/cat', (req, res, next) => {
-  res.json(cats.first.value);
-});
-// catRouter
-//   .delete((req, res, next) => {
-//     const cat = cats.first.value;
-//     cats.dequeue();
-//     cats.enqueue(cat);
-//   });
+catRouter
+  .route('/')
+  .get((req, res, next) => {
+    res.json(cats.first.value);
+  })
+  .delete((req, res, next) => {
+    const cat = cats.first.value;
+    cats.dequeue();
+    cats.enqueue(cat);
+    res.end();
+  });
 
 // dog endpoints
-dogRouter()
-  .get('/dog', (req, res, next) => {
+dogRouter
+  .route('/')
+  .get((req, res, next) => {
     res.json(dogs.first.value);
+  })
+  .delete((req, res, next) => {
+    const dog = dogs.first.value;
+    dogs.dequeue();
+    dogs.enqueue(dog);
+    res.end();
   });
 
 // pets endpoints
-petRouter.get('/pet', (req, res, next) => {
-  res.json(pets.first.value);
-});
-
+petRouter
+  .route('/')
+  .get((req, res, next) => {
+    res.json(pets.first.value);
+  })
+  .delete((req, res, next) => {
+    const pet = pets.first.value;
+    pets.dequeue();
+    pets.enqueue(pet);
+    res.end();
+  });
 
 // Catch-all 404
 app.use(function (req, res, next) {
