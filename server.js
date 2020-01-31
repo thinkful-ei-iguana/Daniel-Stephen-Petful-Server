@@ -58,7 +58,13 @@ petRouter
 lineRouter
   .route('/')
   .get((req, res, next) => {
-    res.json(lineToAdopt.first);
+    const arr = [];
+    let node = lineToAdopt.first;
+    while (node) {
+      arr.push(node);
+      node = node.next;
+    }
+    res.json(arr);
   })
   .delete((req, res, next) => {
     lineToAdopt.dequeue();
