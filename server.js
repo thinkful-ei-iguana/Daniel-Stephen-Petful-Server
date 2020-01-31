@@ -1,9 +1,24 @@
 const express = require('express');
 const cors = require('cors');
-const { cats, dogs, pets } = require('./store');
+const { cats, dogs, pets } = require('./src/store');
 
 const app = express();
+const catRouter = express.Router();
+const dogRouter = express.Router();
 app.use(cors());
+app.use(catRouter);
+app.use(dogRouter);
+
+// cat endpoints
+catRouter.get('/cat', (req, res, next) => {
+  res.json(cats.first.value);
+});
+
+// dog endpoints
+dogRouter.get('/dog', (req, res, next) => {
+  res.json(dogs.first.value);
+});
+
 
 // Catch-all 404
 app.use(function (req, res, next) {
