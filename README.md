@@ -1,26 +1,41 @@
-# Express Boilerplate!
+# DS-Petful Server
 
-This is a boilerplate project used for starting new projects!
+## Pets
 
-## How do set up?
+Path: /pets
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+Methods: GET, DELETE
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+This endpoint responds to GET requests with the first pet in the queue. While The DELETE removes the first animal from the queue and places it at the end of the queue.
 
-## Scripts
+Response: 
+```javascript
+  {
+    imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute dog listening to music 1_1.jpg',
+    imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
+    name: 'Zeus',
+    sex: 'Male',
+    age: 3,
+    breed: 'Golden Retriever',
+    story: 'Owner Passed away'
+  }
+```
 
-Start the application `npm start`
+## Users
 
-Start nodemon for the application `npm run dev`
+Path: /line
 
-Run the tests in watch mode `npm test`
+Methods: GET, DELETE, POST
 
-## Deploying
+This endpoints GET request responds with the first user in the queue. The DELETE method removes a user from the queue. Finally the POST method places a new user in the queue.
 
-When your new project is ready for deployment, add a new heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+Response: 
+```javascript
+  {
+    user_name: 'Jesse'
+  }
+```
+
+## Built by
+  Daniel Kent
+  Stephen Schab
