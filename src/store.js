@@ -5,6 +5,9 @@ const dogs = new Queue();
 const pets = new Queue();
 const lineToAdopt = new Queue();
 
+lineToAdopt.enqueue({user_name: 'Jesse'});
+lineToAdopt.enqueue({user_name: 'James'});
+
 const catsArray = [
   {
     imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg', 
@@ -26,7 +29,7 @@ const catsArray = [
   },
   {
     imageURL:'https://www.publicdomainpictures.net/pictures/30000/velka/cat-in-the-city.jpg', 
-    imageDescription: 'Black Tabby.',
+    imageDescription: 'Black Tabby with baby eyes',
     name: 'Bagheera',
     sex: 'Female',
     age: 4,
@@ -35,7 +38,7 @@ const catsArray = [
   },
   {
     imageURL:'https://www.publicdomainpictures.net/pictures/90000/velka/cat-1402248971N70.jpg', 
-    imageDescription: 'Orange Tabby Kitten.',
+    imageDescription: 'Orange Tabby Kitten. Litterally the cutest thing.',
     name: 'Sunshine',
     sex: 'Female',
     age: '6 months',
@@ -56,7 +59,7 @@ const dogsArray = [
   },
   {
     imageURL: 'https://www.publicdomainpictures.net/pictures/50000/velka/dog-1373127384GhB.jpg',
-    imageDescription: 'Rottweiler.',
+    imageDescription: 'The sweetest faced Rottweiler you will ever see',
     name: 'Stella',
     sex: 'Female',
     age: 8,
@@ -74,11 +77,11 @@ const dogsArray = [
   },
   {
     imageURL: 'https://www.publicdomainpictures.net/pictures/40000/velka/dog-13601642203yU.jpg',
-    imageDescription: 'Chocolate Lab.',
+    imageDescription: 'Chocolate lab with a beautiful coat',
     name: 'Luke',
     sex: 'Male',
     age: 5,
-    breed: 'Golden Retriever',
+    breed: 'Chocolate Lab',
     story: 'Owner Passed away'
   }
 ];
