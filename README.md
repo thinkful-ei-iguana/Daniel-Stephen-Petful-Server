@@ -1,5 +1,9 @@
 # DS-Petful Server
 
+Stack: Node.JS, ExpressJS 
+
+Live App: [petful](https://petful-client-1b8w6s7o9.now.sh/)
+
 ## Pets
 
 Path: /pets

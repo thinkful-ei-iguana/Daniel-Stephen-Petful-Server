@@ -45,7 +45,8 @@ dogRouter
 petRouter
   .route('/')
   .get((req, res, next) => {
-    res.json(pets.first.value);
+    const firstThree = [pets.first.value, pets.first.next.value, pets.first.next.next.value];
+    res.json(firstThree);
   })
   .delete((req, res, next) => {
     const pet = pets.first.value;
