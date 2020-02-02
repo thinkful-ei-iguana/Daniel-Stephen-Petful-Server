@@ -1,6 +1,6 @@
 # DS-Petful (Server)
 
-Summary: This API is used to create and hold a queue of pets where they con be retrieved with GET requests to the '/pets' endpoint. The '/line' endpoint is used to generate dummy users for the petful client.
+The DS-Petful API is used to create and hold a queue of pets where they can be retrieved with GET requests to the '/pets' endpoint. The '/line' endpoint is used to generate dummy users for the petful client.
 
 Stack: Node.JS, ExpressJS 
 
@@ -44,5 +44,4 @@ Response:
 ```
 
 ## Built by
-  Daniel Kent
-  Stephen Schab
+  Daniel Kent & Stephen Schab
