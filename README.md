@@ -1,10 +1,13 @@
-# DS-Petful Server
+# DS-Petful (Server)
+
+[Live App]()
 
 Summary: This API is used to create and hold a queue of pets where they con be retrieved with GET requests to the '/pets' endpoint. The '/line' endpoint is used to generate dummy users for the petful client.
 
 Stack: Node.JS, ExpressJS 
 
-Live App: [petful](https://petful-client-1b8w6s7o9.now.sh/)
+Live App: [DS-Petful](https://ds-petful.now.sh/adopt)
+Client Repo: [GitHub](https://github.com/thinkful-ei-iguana/Daniel-stephen-petful-client)
 
 ## Pets
 
